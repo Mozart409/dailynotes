@@ -33,7 +33,4 @@ enum Movies {
     Title,
     Description,
     Rating,
-    
 }
-
-

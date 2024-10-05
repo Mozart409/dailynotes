@@ -1,11 +1,11 @@
 #![allow(clippy::missing_errors_doc)]
 #![allow(clippy::unnecessary_struct_initialization)]
 #![allow(clippy::unused_async)]
-use loco_rs::prelude::*;
-use serde::{Deserialize, Serialize};
-use axum::{extract::Form, response::Redirect};
-use sea_orm::{sea_query::Order, QueryOrder};
 use axum::debug_handler;
+use axum::{extract::Form, response::Redirect};
+use loco_rs::prelude::*;
+use sea_orm::{sea_query::Order, QueryOrder};
+use serde::{Deserialize, Serialize};
 
 use crate::{
     models::_entities::movies::{ActiveModel, Column, Entity, Model},
@@ -17,14 +17,14 @@ pub struct Params {
     pub title: Option<String>,
     pub description: Option<String>,
     pub rating: Option<i32>,
-    }
+}
 
 impl Params {
     fn update(&self, item: &mut ActiveModel) {
-      item.title = Set(self.title.clone());
-      item.description = Set(self.description.clone());
-      item.rating = Set(self.rating.clone());
-      }
+        item.title = Set(self.title.clone());
+        item.description = Set(self.description.clone());
+        item.rating = Set(self.rating);
+    }
 }
 
 async fn load_item(ctx: &AppContext, id: i32) -> Result<Model> {
@@ -86,10 +86,7 @@ pub async fn show(
 }
 
 #[debug_handler]
-pub async fn add(
-    State(ctx): State<AppContext>,
-    Form(params): Form<Params>,
-) -> Result<Redirect> {
+pub async fn add(State(ctx): State<AppContext>, Form(params): Form<Params>) -> Result<Redirect> {
     let mut item = ActiveModel {
         ..Default::default()
     };

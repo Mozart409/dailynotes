@@ -1,0 +1,9 @@
+pre-push:
+  parallel: true
+
+pre-commit:
+  piped: true
+  commands:
+    fmt:
+      glob: "*.rs"
+      run: cargo fmt --all -- --check
