@@ -1,0 +1,16 @@
+services:
+  db:
+    image: bitnami/postgresql:16.2.0-debian-12-r15
+    container_name: dailynotes_db
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=loco
+      - POSTGRESQL_PASSWORD=loco
+      - POSTGRESQL_DATABASE=dailynotes_development
+    volumes:
+      - pg_data:/bitnami/postgresql
+
+
+volumes:
+  pg_data:
