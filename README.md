@@ -1,6 +1,6 @@
 # Welcome to Loco :train:
 
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/mozart409/dailynotes/badge)](https://scorecard.dev/viewer/?uri=github.com/mozart409/dailynotes)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Mozart409/dailynotes/badge)](https://scorecard.dev/viewer/?uri=github.com/Mozart409/dailynotes)
 
 [Loco](https://loco.rs) is a web and API framework running on Rust.
 
