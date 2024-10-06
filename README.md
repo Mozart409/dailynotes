@@ -19,10 +19,6 @@ $ cargo loco start
 Finished dev [unoptimized + debuginfo] target(s) in 21.63s
     Running `target/debug/myapp start`
 
-    :
-    :
-    :
-
 controller/app_routes.rs:203: [Middleware] Adding log trace id
 
                       ▄     ▀
