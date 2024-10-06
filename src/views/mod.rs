@@ -1,4 +1,5 @@
 pub mod auth;
-pub mod user;
-
+pub mod dashboard;
+pub mod index;
 pub mod movie;
+pub mod user;

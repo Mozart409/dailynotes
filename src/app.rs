@@ -50,6 +50,8 @@ impl Hooks for App {
 
     fn routes(_ctx: &AppContext) -> AppRoutes {
         AppRoutes::with_default_routes()
+            .add_route(controllers::index::routes())
+            .add_route(controllers::dashboard::routes())
             .add_route(controllers::movie::routes())
             .add_route(controllers::notes::routes())
             .add_route(controllers::auth::routes())
