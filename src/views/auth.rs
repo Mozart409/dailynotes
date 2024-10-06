@@ -1,6 +1,6 @@
-use serde::{Deserialize, Serialize};
-
 use crate::models::_entities::users;
+use loco_rs::prelude::*;
+use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct LoginResponse {
@@ -20,4 +20,8 @@ impl LoginResponse {
             is_verified: user.email_verified_at.is_some(),
         }
     }
+}
+
+pub fn register(v: &impl ViewRenderer) -> Result<Response> {
+    format::render().view(v, "auth/register.html", serde_json::json!({}))
 }

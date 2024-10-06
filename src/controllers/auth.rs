@@ -1,7 +1,11 @@
+use crate::views;
 use axum::debug_handler;
 use loco_rs::prelude::*;
 use serde::{Deserialize, Serialize};
 
+pub async fn render_register(ViewEngine(v): ViewEngine<TeraView>) -> Result<impl IntoResponse> {
+    views::auth::register(&v)
+}
 use crate::{
     mailers::auth::AuthMailer,
     models::{
@@ -143,6 +147,7 @@ pub fn routes() -> Routes {
     Routes::new()
         .prefix("api/auth")
         .add("/register", post(register))
+        .add("/register", get(render_register))
         .add("/verify", post(verify))
         .add("/login", post(login))
         .add("/forgot", post(forgot))
