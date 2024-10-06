@@ -52,4 +52,4 @@ required-features = []
 serial_test = "3.1.1"
 rstest = "0.21.0"
 loco-rs = { version = "0.9.0", features = ["testing"] }
-insta = { version = "1.34.0", features = ["redactions", "yaml", "filters"] }
+insta = { version = "1.40.0", features = ["redactions", "yaml", "filters"] }
