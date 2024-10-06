@@ -12,4 +12,4 @@ down: clear
 	docker compose down
 
 build: clear
-	docker buildx build --platform linux/amd64,linux/arm64 -t dailynotes:latest .
+	docker buildx build --platform linux/amd64 -t dailynotes:latest .
